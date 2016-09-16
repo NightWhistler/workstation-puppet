@@ -1,6 +1,6 @@
 class i3 {
 
-  $packages = [ 'i3','j4-dmenu-desktop','suckless-tools','python-setuptools','python-pip','python-gobject', 'python-yaml','libgio2.0','gobject-introspection','libgtk2.0-0','libnotify4', 'gettext','gir1.2-notify-0.7','gnome-settings-daemon','feh','ranger','compton','rofi']
+  $packages = [ 'i3','j4-dmenu-desktop','suckless-tools','python-setuptools','python-pip','python-gobject', 'python-yaml','libgio2.0','gobject-introspection','libgtk2.0-0','libnotify4', 'gettext','gir1.2-notify-0.7','gnome-settings-daemon','feh','ranger','compton','rofi', 'udiskie']
 
   package { $packages:
       ensure  => installed
@@ -25,6 +25,11 @@ class i3 {
   exec { 'disable_icons':
      command => '/usr/bin/gsettings set org.gnome.desktop.background show-desktop-icons false',
      user   => $user
+  }
+
+#i3 installs dunst by default, which messes up notifications
+  package { 'dunst':
+    ensure  => 'purged'
   }
 
 }
