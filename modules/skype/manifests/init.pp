@@ -13,6 +13,7 @@ class skype( $userhome ) {
       source      => "http://www.skype.com/go/getskype-linux-beta-ubuntu-64",
       timeout     => 0,
       verbose     => false,
+      require     => Package[$skype_prereq]
   }
   
   package { 'skype':
