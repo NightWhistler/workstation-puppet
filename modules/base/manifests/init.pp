@@ -25,7 +25,7 @@ class base {
         'python-yaml','libgio2.0','gobject-introspection','libgtk2.0-0','libnotify4',
         'gettext','gir1.2-notify-0.7','gnome-settings-daemon','feh','ranger','compton','rofi',
         'redshift-gtk','gksu','gnome-tweak-tool','network-manager-openvpn-gnome', 'ppa-purge'
-        ,'ubuntu-restricted-extras','unity-tweak-tool','owncloud-client','dnsmasq',
+        ,'ubuntu-restricted-extras','unity-tweak-tool','owncloud-client',
         
         'zsh','terminator','htop','screen','unsort','nmap','pwgen','pidgin','pidgin-otr', 'gimp','inkscape','vlc','keepass2','mono-dmcs','libmono-system-management4.0-cil','xdotool',
         'p7zip-full','remmina'
