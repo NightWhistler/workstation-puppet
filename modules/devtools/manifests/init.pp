@@ -15,6 +15,7 @@ class devtools {
     }
 
     include 'docker'
+    include 'intellij'
 
     class {'docker::compose': 
       ensure => present,
