@@ -3,7 +3,10 @@ class base {
   $user     = hiera('user')
   $userhome = "/home/${user}"
 
-  user { $user: ensure => 'present' }
+  user { $user: 
+	ensure => 'present',
+	shell =>  '/bin/zsh'
+  }
 
   # Directory structure #############################################
   file { ["${userhome}/bin",
