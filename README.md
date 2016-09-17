@@ -2,7 +2,7 @@ Puppet-based workstation provisioning
 =====================================
 
 This project is based on my previous provisioner which used shell scripts.
-The big advatage in using Puppet is that it can now also be used to update machines.
+The big advantage in using Puppet is that it can now also be used to update machines.
 
 This is specifically meant to set up Ubuntu development workstations. It might be useful for other types of work, but your milage may vary.
 
@@ -20,7 +20,7 @@ How I set up a new machine
  5. Run provision.sh to actually install all the tools and packages I need.
     This is a seperate step from 2, since this can also be run to update a machine.
 
- 6. Start the owncloud sync client to sync my dotFiles folder
+ 6. Start the owncloud sync client to sync my dotFiles folder 
 
  7. Symlink the dotFiles to the root of my user's home folder
 
