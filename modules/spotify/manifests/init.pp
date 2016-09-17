@@ -13,7 +13,8 @@ class spotify {
   }
 
   package { 'spotify-client':
-    ensure  => 'installed'
+    ensure  => 'installed',
+    require => Apt::Source['spotify']
   }
 
 }

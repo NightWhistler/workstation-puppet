@@ -30,7 +30,7 @@ class base {
   include 'apt'
   include 'wget'
 
-   ohmyzsh::install { $user: }
+  ohmyzsh::install { $user: }
  
   class { 'skype':
       userhome  => $userhome

@@ -1,11 +1,19 @@
 class i3 {
 
-  apt:ppa { 'ppa:aguignard/ppa': }
+  $user     = hiera('user')
+  $userhome = "/home/${user}"
 
-  $packages = [ 'i3','j4-dmenu-desktop','suckless-tools','python-setuptools','python-pip','python-gobject', 'python-yaml','libgio2.0','gobject-introspection','libgtk2.0-0','libnotify4', 'gettext','gir1.2-notify-0.7','gnome-settings-daemon','feh','ranger','compton','rofi', 'udiskie']
+  $packages = [ 'i3','j4-dmenu-desktop','suckless-tools','python-setuptools','python-pip','python-gobject', 'python-yaml','libgio2.0','gobject-introspection','libgtk2.0-0','libnotify4', 'gettext','gir1.2-notify-0.7','gnome-settings-daemon','feh','ranger','compton','udiskie']
 
   package { $packages:
       ensure  => installed
+  }
+
+  apt::ppa { 'ppa:aguignard/ppa': }
+    
+  package { 'rofi':
+       ensure => 'installed',
+       require => Apt::Ppa['ppa:aguignard/ppa']
   }
 
   require 'apt'
@@ -34,4 +42,12 @@ class i3 {
     ensure  => 'purged'
   }
 
+  ['move', 'left_handed_mouse.sh'].each | $script | {
+    file { "${userhome}/bin/${script}" :
+        ensure  => 'present',
+        source  => "puppet:///modules/i3/${script}",
+        mode    => '0755'
+    }
+  }
+  
 }
