@@ -1,4 +1,7 @@
-class skype( $userhome ) {
+class skype {
+
+  $user     = hiera('user')
+  $userhome = "/home/${user}"
 
   require 'wget'
 

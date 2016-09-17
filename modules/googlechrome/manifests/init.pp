@@ -1,4 +1,7 @@
-class googlechrome( $userhome ) {
+class googlechrome {
+
+  $user     = hiera('user')
+  $userhome = "/home/${user}"
 
   require 'wget'
 

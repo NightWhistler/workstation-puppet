@@ -3,9 +3,12 @@ class base {
   $user     = hiera('user')
   $userhome = "/home/${user}"
 
+  package { 'zsh': ensure => 'installed' }
+
   user { $user: 
 	ensure => 'present',
-	shell =>  '/bin/zsh'
+	shell =>  '/bin/zsh',
+    require => Package['zsh']
   }
 
   # Directory structure #############################################
@@ -23,7 +26,7 @@ class base {
   }
 
   $packages = [
-        'ubuntu-desktop', 'redshift-gtk','gksu','gnome-tweak-tool','network-manager-openvpn-gnome', 'ppa-purge' ,'ubuntu-restricted-extras','unity-tweak-tool','owncloud-client', 'zsh','terminator','htop','screen','unsort','nmap','pwgen','pidgin','pidgin-otr', 'gimp','inkscape','vlc','keepass2','mono-dmcs','libmono-system-management4.0-cil','xdotool', 'p7zip-full','remmina'
+        'ubuntu-desktop', 'redshift-gtk','gksu','gnome-tweak-tool','network-manager-openvpn-gnome', 'ppa-purge' ,'ubuntu-restricted-extras','unity-tweak-tool','owncloud-client', 'terminator','htop','screen','unsort','nmap','pwgen','pidgin','pidgin-otr', 'gimp','inkscape','vlc','keepass2','mono-dmcs','libmono-system-management4.0-cil','xdotool', 'p7zip-full','remmina'
   ]
 
   package { $packages: 
@@ -34,18 +37,10 @@ class base {
   include 'wget'
 
   ohmyzsh::install { $user: }
- 
-  class { 'skype':
-      userhome  => $userhome
-  }
 
+  include 'skype'
   include 'spotify'
 
-  class { 'googlechrome':
-      userhome  => $userhome
-  }
-
-  
-#'hipchat'
+  include 'googlechrome'
 
 }

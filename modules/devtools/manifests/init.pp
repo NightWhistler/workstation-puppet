@@ -8,8 +8,6 @@ class devtools {
 
     ]
 
-#'sdkman','intellij',
-
     package { $packages:
         ensure  => 'installed'
     }
