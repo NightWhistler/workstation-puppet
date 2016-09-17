@@ -1,5 +1,7 @@
 class i3 {
 
+  apt:ppa { 'ppa:aguignard/ppa': }
+
   $packages = [ 'i3','j4-dmenu-desktop','suckless-tools','python-setuptools','python-pip','python-gobject', 'python-yaml','libgio2.0','gobject-introspection','libgtk2.0-0','libnotify4', 'gettext','gir1.2-notify-0.7','gnome-settings-daemon','feh','ranger','compton','rofi', 'udiskie']
 
   package { $packages:
