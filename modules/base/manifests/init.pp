@@ -43,4 +43,19 @@ class base {
 
   include 'googlechrome'
 
+  class { 'chromeapp':
+     displayName    => 'Netflix',
+     url            => 'https://netflix.com'
+  }
+
+  class { 'chromeapp':
+     displayName    => 'Whatsapp Web',
+     url            => 'https://web.whatsapp.com'
+  }
+
+  class { 'chromeapp':
+     displayName   =>  'Google Hangouts',
+     url           =>  'https://hangouts.google.com'
+  }
+
 }

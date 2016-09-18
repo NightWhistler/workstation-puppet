@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=<%= $chromeapp::displayName %>
+Exec=/opt/google/chrome/google-chrome --app=<%= $chromeapp::url %>
+Terminal=false
+Type=Application
