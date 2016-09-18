@@ -43,17 +43,19 @@ class base {
 
   include 'googlechrome'
 
-  class { 'chromeapp':
+  include 'chromeapp'
+
+  chromeapp::app { 'netflix':
      displayName    => 'Netflix',
      url            => 'https://netflix.com'
   }
 
-  class { 'chromeapp':
+  chromeapp::app { 'whatsapp':
      displayName    => 'Whatsapp Web',
      url            => 'https://web.whatsapp.com'
   }
 
-  class { 'chromeapp':
+  chromeapp::app { 'hangouts':
      displayName   =>  'Google Hangouts',
      url           =>  'https://hangouts.google.com'
   }
