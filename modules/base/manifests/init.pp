@@ -40,6 +40,7 @@ class base {
 
   include 'skype'
   include 'spotify'
+  include 'steam'
 
   include 'googlechrome'
 
