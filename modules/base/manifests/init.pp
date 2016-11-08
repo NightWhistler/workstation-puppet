@@ -33,11 +33,13 @@ class base {
       ensure  => 'installed',
   }
 
-  #Work-around to make sure the Owncloud icon is shown.
-  package { 'appmenu-qt5':
-      ensure => 'absent',
+#Work-around to make sure the Owncloud icon is shown.
+  if $facts['os']['release']['full'] == '16.04' {
+      package { 'appmenu-qt5':
+          ensure => 'absent',
+      }
   }
-
+  
   include 'apt'
   include 'wget'
 
