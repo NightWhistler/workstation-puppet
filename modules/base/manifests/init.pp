@@ -33,6 +33,11 @@ class base {
       ensure  => 'installed',
   }
 
+  #Work-around to make sure the Owncloud icon is shown.
+  package { 'appmenu-qt5':
+      ensure => 'absent',
+  }
+
   include 'apt'
   include 'wget'
 
