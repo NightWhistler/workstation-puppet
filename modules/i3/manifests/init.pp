@@ -26,6 +26,11 @@ class i3 {
     require  => Apt::Ppa['ppa:fixnix/indicator-systemtray-unity'],
   }
 
+  file { '/etc/i3/config':
+    ensure  => 'present',
+    source  => 'puppet:///modules/i3/i3_config'
+  }
+
 #This fixes the prefs breaking under i3
   exec { 'fix_preferences': 
      command => '/bin/sed -i s/OnlyShowIn=.*$// /usr/share/applications/unity-*-panel.desktop'
