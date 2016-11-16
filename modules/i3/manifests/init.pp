@@ -31,6 +31,12 @@ class i3 {
     source  => 'puppet:///modules/i3/i3_config'
   }
 
+  file { '/etc/i3status.conf':
+    ensure  => 'present',
+    source  => 'puppet:///modules/i3/i3status.conf'
+  }
+
+
 #This fixes the prefs breaking under i3
   exec { 'fix_preferences': 
      command => '/bin/sed -i s/OnlyShowIn=.*$// /usr/share/applications/unity-*-panel.desktop'
