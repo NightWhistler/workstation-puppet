@@ -36,6 +36,10 @@ class i3 {
     source  => 'puppet:///modules/i3/i3status.conf'
   }
 
+  file { '/etc/tmux.conf':
+    ensure  => 'present',
+    source  => 'puppet:///modules/i3/tmux.conf'
+  }
 
 #This fixes the prefs breaking under i3
   exec { 'fix_preferences': 
