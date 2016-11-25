@@ -21,7 +21,7 @@ class firefoxplugins {
       extract         => true,
       extract_path    => '/usr/lib/keepass2/',
       extract_command => 'unzip -j %s deps/KeePassRPC.plgx',
-      creates         => '/usr/lib/keepass2/KeePassRPC.plgx',
+      creates         => '/usr/lib/keepass2/plugins/KeePassRPC.plgx',
       require         => Wget::Fetch['https://addons.mozilla.org/firefox/downloads/latest/keefox/platform:2/addon-306880-latest.xpi'],
     }
 }
