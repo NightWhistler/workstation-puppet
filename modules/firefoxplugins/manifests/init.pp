@@ -6,7 +6,8 @@ class firefoxplugins {
         ['https://addons.mozilla.org/firefox/downloads/latest/vimperator/addon-450078-latest.xpi', 'vimperator@mozdev.org.xpi'],
         ['https://addons.mozilla.org/firefox/downloads/latest/hide-tab-bar-with-one-tab/addon-429664-latest.xpi', '{e5bbc237-c99b-4ced-a061-0be27703295f}.xpi'],
         ['https://addons.mozilla.org/firefox/downloads/latest/keefox/platform:2/addon-306880-latest.xpi', 'keefox@chris.tomlinson.xpi'],
-        ['https://addons.mozilla.org/firefox/downloads/latest/xmarks-sync/addon-2410-latest.xpi', 'foxmarks@kei.com.xpi']
+        ['https://addons.mozilla.org/firefox/downloads/latest/xmarks-sync/addon-2410-latest.xpi', 'foxmarks@kei.com.xpi'],
+        ['https://addons.mozilla.org/firefox/downloads/latest/jsonview/addon-10869-latest.xpi?src=dp-btn-primary', 'jsonview@brh.numbera.com.xpi']
     ]
 
     $addons.each | $addon | {
