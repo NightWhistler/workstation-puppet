@@ -4,7 +4,7 @@ class devtools {
 
     $packages = [
 
-        'build-essential','git','gitk','myrepos','meld','vim','vim-gtk','vagrant','virtualbox','dnsmasq', 'gradle', 'maven', 'scala', 'groovy'
+        'build-essential','git','gitk','myrepos','perl-doc','meld','vim','vim-gtk','vagrant','virtualbox','dnsmasq', 'gradle', 'maven', 'scala', 'groovy'
 
     ]
 
