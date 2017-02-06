@@ -68,4 +68,9 @@ class base {
      url           =>  'https://hangouts.google.com'
   }
 
+  chromeapp::app { 'fbmessenger':
+     displayName   =>  'Facebook Messenger',
+     url           =>  'https://messenger.com'
+  }
+
 }
