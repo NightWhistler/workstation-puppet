@@ -73,4 +73,10 @@ class base {
      url           =>  'https://messenger.com'
   }
 
+
+  chromeapp::app { 'outlook':
+     displayName   =>  'Outlook',
+     url           =>  'https://outlook.office365.com/owa/'
+  }
+
 }
