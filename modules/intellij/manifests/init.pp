@@ -3,7 +3,7 @@ class intellij {
     $user     = hiera('user')
     $userhome = "/home/${user}"
 
-    $release = '2016.3'
+    $release = '2017.1'
 
     $ideaPath = "${userhome}/Apps/idea-IU-${release}"
 
