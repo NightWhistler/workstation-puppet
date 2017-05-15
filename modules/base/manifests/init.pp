@@ -43,6 +43,16 @@ class base {
   include 'apt'
   include 'wget'
 
+  class {'::unattended_upgrades':
+    period    => '1',
+    repos     => {
+        stable => {
+          label => 'Debian-Security',
+        },
+    },
+    blacklist => [],
+  }
+
   ohmyzsh::install { $user: }
 
   include 'skype'
