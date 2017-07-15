@@ -1,17 +1,17 @@
-class intellij( $release ) {
+class intellij( $version ) {
 
     $user     = hiera('user')
     $userhome = "/home/${user}"
 
 
-    $ideaPath = "${userhome}/Apps/idea-IU-${release}"
+    $ideaPath = "${userhome}/Apps/idea-IU-${version}"
 
     file { $ideaPath:
         ensure        => 'directory'
     }
 
     archive { 'intellij.tar.gz':
-      source          => "https://download.jetbrains.com/idea/ideaIU-${release}.tar.gz",
+      source          => "https://download.jetbrains.com/idea/ideaIU-${version}.tar.gz",
       path            => "${userhome}/Downloads/intellij.tar.gz",
       extract         => true,
       cleanup         => true,

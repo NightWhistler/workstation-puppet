@@ -64,5 +64,7 @@ class i3 {
         mode    => '0755'
     }
   }
+
+  include 'playerctl'
   
 }
