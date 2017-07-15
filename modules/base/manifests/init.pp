@@ -28,14 +28,26 @@ class base {
   include 'apt'
   include 'wget'
 
-  apt::ppa { 'ppa:jtaylor/keepass': }
-
-  $packages = [
-        'ubuntu-desktop', 'redshift-gtk','gksu','gnome-tweak-tool','network-manager-openvpn-gnome', 'ppa-purge' ,'ubuntu-restricted-extras','unity-tweak-tool','owncloud-client', 'terminator','htop','screen','unsort','nmap','pwgen','pidgin','pidgin-otr', 'gimp','inkscape','vlc','keepass2','mono-dmcs','libmono-system-management4.0-cil','xdotool', 'p7zip-full','remmina', 'tmux', 'urlview', 'xbacklight', 'arandr'
+    $packages = [
+        'ubuntu-desktop', 'redshift-gtk','gksu','gnome-tweak-tool','network-manager-openvpn-gnome', 'ppa-purge' ,'ubuntu-restricted-extras','unity-tweak-tool','owncloud-client', 'terminator','htop','screen','unsort','nmap','pwgen','pidgin','pidgin-otr', 'gimp','inkscape','vlc','mono-dmcs','libmono-system-management4.0-cil','xdotool', 'p7zip-full','remmina', 'tmux', 'urlview', 'xbacklight', 'arandr'
   ]
 
   package { $packages: 
-      require => Apt::Ppa['ppa:jtaylor/keepass'],
+      ensure  => 'installed',
+  }
+
+  apt::ppa { 'ppa:jtaylor/keepass': }
+
+  exec { 'keepass_apt_get_update':
+    command     => 'apt-get update',
+    cwd         => '/tmp',
+    path        => ['/usr/bin'],
+    require     => Apt::Ppa['ppa:jtaylor/keepass'],
+    refreshonly => true,
+  }
+
+  package { 'keepass2':
+      require => Exec['keepass_apt_get_update'],
       ensure  => 'installed',
   }
 

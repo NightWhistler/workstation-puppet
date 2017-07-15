@@ -9,21 +9,37 @@ class i3 {
       ensure  => installed
   }
 
+  require 'apt'
+
   apt::ppa { 'ppa:aguignard/ppa': }
+
+  exec { 'rofi_apt_get_update':
+    command     => 'apt-get update',
+    cwd         => '/tmp',
+    path        => ['/usr/bin'],
+    require     => Apt::Ppa['ppa:aguignard/ppa'],
+    refreshonly => true,
+  }
     
   package { 'rofi':
        ensure => 'installed',
-       require => Apt::Ppa['ppa:aguignard/ppa']
+       require => Exec['rofi_apt_get_update']
   }
-
-  require 'apt'
 
  #Fixes systray
   apt::ppa { 'ppa:fixnix/indicator-systemtray-unity': }
 
+  exec { 'systray_apt_get_update':
+    command     => 'apt-get update',
+    cwd         => '/tmp',
+    path        => ['/usr/bin'],
+    require     => Apt::Ppa['ppa:fixnix/indicator-systemtray-unity'],
+    refreshonly => true,
+  }
+
   package { 'indicator-systemtray-unity':
     ensure   => 'installed',
-    require  => Apt::Ppa['ppa:fixnix/indicator-systemtray-unity'],
+    require  => Exec['systray_apt_get_update'],
   }
 
   file { '/etc/i3/config':

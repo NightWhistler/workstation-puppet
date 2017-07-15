@@ -12,9 +12,17 @@ class spotify {
       },
   }
 
+  exec { 'spotify_apt_get_update':
+    command     => 'apt-get update',
+    cwd         => '/tmp',
+    path        => ['/usr/bin'],
+    require     => Apt::Source['spotify'],
+    refreshonly => true,
+  }
+
   package { 'spotify-client':
     ensure  => 'installed',
-    require => Apt::Source['spotify']
+    require => Exec['spotify_apt_get_update']
   }
 
 }
