@@ -21,10 +21,10 @@ class devtools {
 
     include java8
 
-    exec { 'gdub':
-        creates => '/usr/local/bin/gw',
-        command => '/usr/bin/curl -sLo- http://get.bpkg.io | /bin/bash && /usr/local/bin/bpkg install dougborg/gdub -g'
-    }
+    #exec { 'gdub':
+        #creates => '/usr/local/bin/gw',
+        #command => '/usr/bin/curl -sLo- http://get.bpkg.io | /bin/bash && /usr/local/bin/bpkg install dougborg/gdub -g'
+    #}
 
     file { "${userhome}/bin/git-meld":
         ensure  => 'present',
