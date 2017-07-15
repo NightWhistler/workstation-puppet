@@ -1,5 +1,12 @@
 user: 'alex'
 
+classes:
+    - base
+    - i3
+    - firefoxplugins
+    - devtools
+    - chromeapp
+
 intellij::version: '2017.1.5'
 playerctl::version: '0.5.0'
 

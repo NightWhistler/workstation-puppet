@@ -1,9 +1,12 @@
----
-:backends:
-    - yaml
-:yaml:
-    :datadir: hieradata
-
-:hierarchy:
-    - "node/%{::hostname}"
-    - defaults
+version: 5
+defaults: 
+  datadir: hieradata
+  data_hash: yaml_data
+  
+hierarchy:
+  - name: "Yaml hierarchy"
+    paths:
+      - "hostname/%{facts.networking.hostname}.yaml"
+      - "product/%{facts.dmi.product.name}.yaml"
+      - "manufacturer/%{facts.dmi.manufacturer}.yaml"
+      - "defaults.yaml"

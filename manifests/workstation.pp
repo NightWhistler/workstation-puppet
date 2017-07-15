@@ -1,4 +1,1 @@
-include 'base'
-include 'i3'
-include 'firefoxplugins'
-include 'devtools'
+lookup('classes', Array[String], 'unique').include
