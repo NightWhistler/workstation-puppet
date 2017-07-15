@@ -2,3 +2,23 @@ user: 'alex'
 
 intellij::release: '2017.1.5'
 sbt::sbt_jar_version: 0.13.15
+
+chromeapp::apps:
+  - name: "fbmessenger"
+    displayName: "Facebook messenger"
+    url: "https://messenger.com"
+  - name: "netflix"
+    displayName: "Netflix"
+    url: "https://netflix.com"
+  - name: "whatsapp"
+    displayName: "Whatsapp Web"
+    url: "https://web.whatsapp.com"
+  - name: "hangouts"
+    displayName: "Google Hangouts"
+    url: "https://hangouts.google.come"
+  - name: "outlook"
+    displayName: "Outlook"
+    url: "https://outlook.office365.com/owa/"
+  - name: "gmail"
+    displayName: "GMail"
+    url: "https://mail.google.com/mail/u/0/#inbox"

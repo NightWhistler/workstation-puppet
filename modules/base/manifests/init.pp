@@ -25,6 +25,9 @@ class base {
     group  => $user,
   }
 
+  include 'apt'
+  include 'wget'
+
   apt::ppa { 'ppa:jtaylor/keepass': }
 
   $packages = [
@@ -42,9 +45,6 @@ class base {
           ensure => 'absent',
       }
   }
-  
-  include 'apt'
-  include 'wget'
 
   class {'::unattended_upgrades':
     period    => '1',
@@ -65,35 +65,5 @@ class base {
   include 'googlechrome'
 
   include 'chromeapp'
-
-  chromeapp::app { 'netflix':
-     displayName    => 'Netflix',
-     url            => 'https://netflix.com'
-  }
-
-  chromeapp::app { 'whatsapp':
-     displayName    => 'Whatsapp Web',
-     url            => 'https://web.whatsapp.com'
-  }
-
-  chromeapp::app { 'hangouts':
-     displayName   =>  'Google Hangouts',
-     url           =>  'https://hangouts.google.com'
-  }
-
-  chromeapp::app { 'fbmessenger':
-     displayName   =>  'Facebook Messenger',
-     url           =>  'https://messenger.com'
-  }
-
-  chromeapp::app { 'outlook':
-     displayName   =>  'Outlook',
-     url           =>  'https://outlook.office365.com/owa/'
-  }
-
-  chromeapp::app { 'gmail':
-     displayName   =>  'GMail',
-     url           =>  'https://mail.google.com/mail/u/0/#inbox'
-  }
 
 }
