@@ -1,9 +1,8 @@
-class intellij {
+class intellij( $release ) {
 
     $user     = hiera('user')
     $userhome = "/home/${user}"
 
-    $release = '2017.1'
 
     $ideaPath = "${userhome}/Apps/idea-IU-${release}"
 
