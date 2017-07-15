@@ -25,11 +25,14 @@ class base {
     group  => $user,
   }
 
+  apt::ppa { 'ppa:jtaylor/keepass': }
+
   $packages = [
         'ubuntu-desktop', 'redshift-gtk','gksu','gnome-tweak-tool','network-manager-openvpn-gnome', 'ppa-purge' ,'ubuntu-restricted-extras','unity-tweak-tool','owncloud-client', 'terminator','htop','screen','unsort','nmap','pwgen','pidgin','pidgin-otr', 'gimp','inkscape','vlc','keepass2','mono-dmcs','libmono-system-management4.0-cil','xdotool', 'p7zip-full','remmina', 'tmux', 'urlview'
   ]
 
   package { $packages: 
+      require => Apt::Ppa['ppa:jtaylor/keepass'],
       ensure  => 'installed',
   }
 

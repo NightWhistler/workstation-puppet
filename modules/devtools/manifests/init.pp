@@ -8,6 +8,8 @@ class devtools {
 
     ]
 
+    include 'sbt'
+
     package { $packages:
         ensure  => 'installed'
     }

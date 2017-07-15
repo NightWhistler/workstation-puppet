@@ -1,3 +1,4 @@
 user: 'alex'
 
 intellij::release: '2017.1.5'
+sbt::sbt_jar_version: 0.13.15

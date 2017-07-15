@@ -9,6 +9,7 @@ sudo /opt/puppetlabs/bin/puppet module install maestrodev-wget
 sudo /opt/puppetlabs/bin/puppet module install spantree/java8
 sudo /opt/puppetlabs/bin/puppet module install puppet-archive
 sudo /opt/puppetlabs/bin/puppet module install andschwa-unattended_upgrades 
+sudo /opt/puppetlabs/bin/puppet module install talend-sbt
 
 echo "Setting up workstation... go grab some coffee :)"
 sudo /opt/puppetlabs/bin/puppet apply --hiera_config hiera.yaml --modulepath /etc/puppetlabs/code/environments/production/modules:./modules: manifests 
