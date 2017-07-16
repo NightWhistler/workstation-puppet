@@ -18,6 +18,7 @@ class i3 {
     cwd         => '/tmp',
     path        => ['/usr/bin'],
     require     => Apt::Ppa['ppa:aguignard/ppa'],
+    subscribe   => Apt::Ppa['ppa:aguignard/ppa'],
     refreshonly => true,
   }
     
@@ -34,6 +35,7 @@ class i3 {
     cwd         => '/tmp',
     path        => ['/usr/bin'],
     require     => Apt::Ppa['ppa:fixnix/indicator-systemtray-unity'],
+    subscribe   => Apt::Ppa['ppa:fixnix/indicator-systemtray-unity'],
     refreshonly => true,
   }
 

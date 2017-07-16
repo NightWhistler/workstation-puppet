@@ -25,7 +25,10 @@ class base {
     group  => $user,
   }
 
-  include 'apt'
+  class { 'apt':
+    always_apt_update => true,
+  }
+
   include 'wget'
 
     $packages = [
@@ -43,6 +46,7 @@ class base {
     cwd         => '/tmp',
     path        => ['/usr/bin'],
     require     => Apt::Ppa['ppa:jtaylor/keepass'],
+    subscribe   => Apt::Ppa['ppa:jtaylor/keepass'],
     refreshonly => true,
   }
 
