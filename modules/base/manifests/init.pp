@@ -25,13 +25,10 @@ class base {
     group  => $user,
   }
 
-  class { 'apt':
-    always_apt_update => true,
-  }
-
+  include 'apt'
   include 'wget'
 
-    $packages = [
+  $packages = [
         'ubuntu-desktop', 'redshift-gtk','gksu','gnome-tweak-tool','network-manager-openvpn-gnome', 'ppa-purge' ,'ubuntu-restricted-extras','unity-tweak-tool','owncloud-client', 'terminator','htop','screen','unsort','nmap','pwgen','pidgin','pidgin-otr', 'gimp','inkscape','vlc','mono-dmcs','libmono-system-management4.0-cil','xdotool', 'p7zip-full','remmina', 'tmux', 'urlview', 'xbacklight', 'arandr'
   ]
 
