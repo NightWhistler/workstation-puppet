@@ -26,6 +26,7 @@ class base {
   }
 
   include 'apt'
+  include 'unattended_upgrades'
   include 'wget'
 
   $packages = [
@@ -57,16 +58,6 @@ class base {
       package { 'appmenu-qt5':
           ensure => 'absent',
       }
-  }
-
-  class {'::unattended_upgrades':
-    period    => '1',
-    repos     => {
-        stable => {
-          label => 'Debian-Security',
-        },
-    },
-    blacklist => [],
   }
 
   ohmyzsh::install { $user: }
