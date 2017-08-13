@@ -7,7 +7,7 @@ classes:
     - devtools
     - chromeapp
 
-intellij::version: '2017.1.5'
+intellij::version: '2017.2.1'
 playerctl::version: '0.5.0'
 
 sbt::sbt_jar_version: 0.13.15
