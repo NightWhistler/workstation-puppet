@@ -7,7 +7,7 @@ class spotify {
       release  => 'stable',
       repos    => 'non-free',
       key      => {
-        'id'     => 'BBEBDCB318AD50EC6865090613B00F1FD2C19886',
+        'id'     => '0DF731E45CE24F27EEEB1450EFDC8610341D9410',
         'server' => 'hkp://keyserver.ubuntu.com:80',
       },
   }
