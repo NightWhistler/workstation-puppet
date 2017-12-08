@@ -3,11 +3,10 @@ user: 'alex'
 classes:
     - base
     - i3
-    - firefoxplugins
     - devtools
     - chromeapp
 
-intellij::version: '2017.2.1'
+intellij::version: '2017.3'
 playerctl::version: '0.5.0'
 
 sbt::sbt_jar_version: 0.13.15
