@@ -5,6 +5,9 @@ classes:
     - i3
     - devtools
     - chromeapp
+    - qutebrowser
+
+qutebrowser::repo: "https://github.com/qutebrowser/qutebrowser.git"
 
 intellij::version: '2017.3'
 playerctl::version: '0.5.0'

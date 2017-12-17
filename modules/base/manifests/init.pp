@@ -6,13 +6,15 @@ class base {
   package { 'zsh': ensure => 'installed' }
 
   user { $user: 
-	ensure => 'present',
-	shell =>  '/bin/zsh',
-    require => Package['zsh']
+    ensure => 'present',
+    shell   => '/bin/zsh',
+    require => Package['zsh'],
+    home    => $userhome
   }
 
   # Directory structure #############################################
-  file { ["${userhome}/bin",
+  file { [ $userhome,
+          "${userhome}/bin",
           "${userhome}/Apps",
           "${userhome}/Desktop",
           "${userhome}/Downloads",

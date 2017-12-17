@@ -1,0 +1,2 @@
+#!/bin/bash
+/home/alex/Apps/qutebrowser/.venv/bin/python3 -m qutebrowser "$@"

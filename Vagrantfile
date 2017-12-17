@@ -12,7 +12,7 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "dapas/xenial-puppet4-sf"
+  config.vm.box = "ubuntu/xenial64"
 
   config.vm.provision "shell", inline: <<-SHELL
       echo "APT::Periodic::Unattended-Upgrade \"0\";" >> /etc/apt/apt.conf.d/10periodic 
