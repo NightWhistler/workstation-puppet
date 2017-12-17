@@ -4,18 +4,19 @@ class qutebrowser( $repo ) {
     ensure => 'present'
   }
 
-  $qute_folder = "$base::userhome/Apps/qutebrowser"
+  $app_folder  = "$base::userhome/Apps"
+  $qute_folder = "$app_folder/qutebrowser"
 
   exec { 'clone_qutebrowser':
     command => "/usr/bin/git clone $repo $qute_folder",
-    creates => $quteFolder,
-    cwd     => $appFolder,
+    creates => $qute_folder,
+    cwd     => $app_folder,
     require => Package['git']
   }
 
   exec { '/usr/bin/tox -e mkvenv-pypi':
-    creates  => "$quteFolder/.venv",
-    cwd      => $quteFolder,
+    creates  => "$qute_folder/.venv",
+    cwd      => $qute_folder,
     require  => Exec['clone_qutebrowser']
   } 
 
