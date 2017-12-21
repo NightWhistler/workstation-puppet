@@ -1,52 +1,20 @@
-class i3 {
+class i3( $packages, $classes ) {
 
-  $user     = hiera('user')
-  $userhome = "/home/${user}"
+  require 'base'
 
-  $packages = [ 'i3','j4-dmenu-desktop','suckless-tools','python-setuptools','python-pip','python-gobject', 'python-yaml','libgio2.0','gobject-introspection','libgtk2.0-0','libnotify4', 'gettext','gir1.2-notify-0.7','gnome-settings-daemon','feh','ranger','compton','udiskie']
+  $user = $base::user
+  $userhome = $base::userhome
 
   package { $packages:
       ensure  => installed
   }
 
-  require 'apt'
-
-  apt::ppa { 'ppa:aguignard/ppa': }
-
-  exec { 'rofi_apt_get_update':
-    command     => 'apt-get update',
-    cwd         => '/tmp',
-    path        => ['/usr/bin'],
-    require     => Apt::Ppa['ppa:aguignard/ppa'],
-    subscribe   => Apt::Ppa['ppa:aguignard/ppa'],
-    refreshonly => true,
-  }
-    
-  package { 'rofi':
-       ensure => 'installed',
-       require => Exec['rofi_apt_get_update']
-  }
-
- #Fixes systray
-  apt::ppa { 'ppa:fixnix/indicator-systemtray-unity': }
-
-  exec { 'systray_apt_get_update':
-    command     => 'apt-get update',
-    cwd         => '/tmp',
-    path        => ['/usr/bin'],
-    require     => Apt::Ppa['ppa:fixnix/indicator-systemtray-unity'],
-    subscribe   => Apt::Ppa['ppa:fixnix/indicator-systemtray-unity'],
-    refreshonly => true,
-  }
-
-  package { 'indicator-systemtray-unity':
-    ensure   => 'installed',
-    require  => Exec['systray_apt_get_update'],
-  }
+  include $classes
 
   file { '/etc/i3/config':
     ensure  => 'present',
-    source  => 'puppet:///modules/i3/i3_config'
+    source  => 'puppet:///modules/i3/i3_config',
+    require => Package['i3']
   }
 
   file { '/etc/i3status.conf':
@@ -82,7 +50,5 @@ class i3 {
         mode    => '0755'
     }
   }
-
-  include 'playerctl'
   
 }

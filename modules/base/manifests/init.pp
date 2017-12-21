@@ -1,7 +1,15 @@
-class base {
+class base( $packages, $classes ) {
 
-  $user     = hiera('user')
+  $user     = lookup('user')
   $userhome = "/home/${user}"
+
+  package { $packages: 
+      ensure  => 'installed',
+  }
+
+  include $classes
+  include apt
+  include wget
 
   package { 'zsh': ensure => 'installed' }
 
@@ -12,7 +20,6 @@ class base {
     home    => $userhome
   }
 
-  # Directory structure #############################################
   file { [ $userhome,
           "${userhome}/bin",
           "${userhome}/Apps",
@@ -27,35 +34,8 @@ class base {
     group  => $user,
   }
 
-  include 'apt'
-  include 'unattended_upgrades'
-  include 'wget'
 
-  $packages = [
-        'ubuntu-desktop', 'redshift-gtk','gksu','gnome-tweak-tool','network-manager-openvpn-gnome', 'ppa-purge' ,'ubuntu-restricted-extras','unity-tweak-tool','owncloud-client', 'terminator','htop','screen','unsort','nmap','pwgen', 'gimp','inkscape','vlc','mono-dmcs','libmono-system-management4.0-cil','xdotool', 'p7zip-full','remmina', 'tmux', 'urlview', 'xbacklight', 'arandr'
-  ]
-
-  package { $packages: 
-      ensure  => 'installed',
-  }
-
-  apt::ppa { 'ppa:jtaylor/keepass': }
-
-  exec { 'keepass_apt_get_update':
-    command     => 'apt-get update',
-    cwd         => '/tmp',
-    path        => ['/usr/bin'],
-    require     => Apt::Ppa['ppa:jtaylor/keepass'],
-    subscribe   => Apt::Ppa['ppa:jtaylor/keepass'],
-    refreshonly => true,
-  }
-
-  package { 'keepass2':
-      require => Exec['keepass_apt_get_update'],
-      ensure  => 'installed',
-  }
-
-#Work-around to make sure the Owncloud icon is shown.
+  #Work-around to make sure the Owncloud icon is shown.
   if $facts['os']['release']['full'] == '16.04' {
       package { 'appmenu-qt5':
           ensure => 'absent',
@@ -63,13 +43,5 @@ class base {
   }
 
   ohmyzsh::install { $user: }
-
-  include 'skype'
-  include 'spotify'
-  include 'steam'
-
-  include 'googlechrome'
-
-  include 'chromeapp'
 
 }

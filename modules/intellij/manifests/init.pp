@@ -1,9 +1,8 @@
 class intellij( $version ) {
 
-    $user     = hiera('user')
-    $userhome = "/home/${user}"
+    require 'base'
 
-
+    $userhome = $base::userhome
     $ideaPath = "${userhome}/Apps/idea-IU-${version}"
 
     file { $ideaPath:

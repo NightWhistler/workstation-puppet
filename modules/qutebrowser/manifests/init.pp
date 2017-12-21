@@ -1,10 +1,13 @@
 class qutebrowser( $repo ) {
 
+  require base
+
   package { 'tox':
     ensure => 'present'
   }
 
-  $app_folder  = "$base::userhome/Apps"
+  $userhome    = $base::userhome
+  $app_folder  = "$userhome/Apps"
   $qute_folder = "$app_folder/qutebrowser"
 
   exec { 'clone_qutebrowser':
@@ -20,12 +23,12 @@ class qutebrowser( $repo ) {
     require  => Exec['clone_qutebrowser']
   } 
 
-  file { "$base::userhome/bin/qutebrowser":
+  file { "$userhome/bin/qutebrowser":
     source  => "puppet:///modules/qutebrowser/qutebrowser",
     mode    => '0755'
   }
 
-  file { "$base::userhome/.local/share/applications/Qutebrowser.desktop":
+  file { "$userhome/.local/share/applications/Qutebrowser.desktop":
     source  => "puppet:///modules/qutebrowser/Qutebrowser.desktop"
   }
   

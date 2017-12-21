@@ -12,4 +12,4 @@ sudo /opt/puppetlabs/bin/puppet module install talend-sbt
 sudo /opt/puppetlabs/bin/puppet module install puppet-unattended_upgrades --force
 
 echo "Setting up workstation... go grab some coffee :)"
-sudo /opt/puppetlabs/bin/puppet apply --hiera_config hiera.yaml --modulepath /etc/puppetlabs/code/environments/production/modules:./modules: manifests 
+./update.sh

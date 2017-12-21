@@ -1,11 +1,11 @@
 class chromeapp( $apps ) {
 
-    require 'googlechrome'
+    require base
+    require googlechrome
 
-    $user     = hiera('user')
-    $userhome = "/home/${user}"
+    $userhome = $base::userhome
 
-    file { ["${chromeapp::userhome}/.local/","${chromeapp::userhome}/.local/share/","${chromeapp::userhome}/.local/share/applications/"]:
+    file { ["$userhome/.local/","$userhome/.local/share/","$userhome/.local/share/applications/"]:
         ensure  => 'directory'
     }
 

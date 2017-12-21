@@ -1,17 +1,100 @@
 user: 'alex'
 
 classes:
-    - base
-    - i3
-    - devtools
-    - chromeapp
-    - qutebrowser
+  - base
+  - i3
+  - devtools
+
+base::packages:
+  - ubuntu-desktop
+  - git
+  - redshift-gtk
+  - gksu
+  - gnome-tweak-tool
+  - network-manager-openvpn-gnome
+  - ppa-purge 
+  - ubuntu-restricted-extras
+  - unity-tweak-tool
+  - owncloud-client
+  - terminator
+  - htop
+  - screen
+  - unsort
+  - nmap
+  - pwgen
+  - gimp
+  - inkscape
+  - vlc
+  - p7zip-full
+  - remmina
+  - urlview
+
+base::classes:
+  - keepass2
+  - skype
+  - spotify
+  - steam
+  - googlechrome
+  - chromeapp
+  - qutebrowser
+  - unattended_upgrades
 
 qutebrowser::repo: "https://github.com/qutebrowser/qutebrowser.git"
 
-intellij::version: '2017.3'
+i3::packages:
+  - i3
+  - j4-dmenu-desktop
+  - suckless-tools
+  - python-setuptools
+  - python-pip
+  - python-gobject
+  - python-yaml
+  - libgio2.0
+  - gobject-introspection
+  - libgtk2.0-0
+  - libnotify4
+  - gettext
+  - gir1.2-notify-0.7
+  - gnome-settings-daemon
+  - feh
+  - ranger
+  - compton
+  - udiskie
+  - tmux
+  - xbacklight
+  - arandr
+
+i3::classes:
+  - playerctl
+  - i3::rofi
+  - i3::fix_systray
+
 playerctl::version: '0.5.0'
 
+devtools::packages:
+  - build-essential
+  - gitk
+  - myrepos
+  - perl-doc
+  - meld
+  - vim
+  - vim-gtk
+  - vagrant
+  - virtualbox
+  - dnsmasq
+  - gradle
+  - maven
+  - scala
+  - groovy
+  - xml-twig-tools
+
+devtools::classes:
+  - sbt
+  - docker
+  - intellij
+  - java8
+
+intellij::version: '2017.3'
 sbt::sbt_jar_version: 0.13.15
 
 chromeapp::apps:
