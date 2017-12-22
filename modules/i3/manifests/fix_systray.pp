@@ -1,6 +1,6 @@
 class i3::fix_systray {
 
-  require 'apt'
+  require apt
 
   apt::ppa { 'ppa:fixnix/indicator-systemtray-unity': }
 

@@ -1,12 +1,12 @@
 class skype {
 
-  $user     = hiera('user')
-  $userhome = "/home/${user}"
+  require myuser
+  require wget
 
-  require 'wget'
+  $downloads_dir = $myuser::downloads_dir
 
   wget::fetch { 'skype.deb':
-      destination => "${userhome}/Downloads/skype.deb",
+      destination => "$downloads_dir/skype.deb",
       source      => "https://repo.skype.com/latest/skypeforlinux-64.deb",
       timeout     => 0,
       verbose     => false,
@@ -16,7 +16,7 @@ class skype {
   package { 'skype':
     ensure    => 'installed',
     provider  => 'dpkg',
-    source    => "${userhome}/Downloads/skype.deb",
+    source    => "$downloads_dir/skype.deb",
     require   => Wget::Fetch['skype.deb']
   }
 

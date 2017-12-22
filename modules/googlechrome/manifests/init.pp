@@ -1,16 +1,16 @@
 class googlechrome {
 
-  require base
+  require myuser
   require wget
 
-  $userhome = $base::userhome
+  $downloads_dir = $myuser::downloads_dir
 
   package { 'libappindicator1':
     ensure  => 'installed'
   }
 
   wget::fetch { 'google-chrome.deb':
-      destination => "$userhome/Downloads/google-chrome.deb",
+      destination => "$downloads_dir/google-chrome.deb",
       source      => "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb",
       timeout     => 0,
       verbose     => false,
@@ -19,7 +19,7 @@ class googlechrome {
   package { 'google-chrome-stable':
     ensure    => 'installed',
     provider  => 'dpkg',
-    source    => "$userhome/Downloads/google-chrome.deb",
+    source    => "$downloads_dir/google-chrome.deb",
     require   => Wget::Fetch['google-chrome.deb']
   }
 

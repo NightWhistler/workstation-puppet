@@ -1,15 +1,13 @@
-class i3( $packages, $classes ) {
+class i3 {
 
-  require 'base'
+  require myuser
 
-  $user = $base::user
-  $userhome = $base::userhome
+  $user = $myuser::username
+  $userhome = $myuser::userhome
 
-  package { $packages:
-      ensure  => installed
+  package { 'i3':
+    ensure => installed
   }
-
-  include $classes
 
   file { '/etc/i3/config':
     ensure  => 'present',

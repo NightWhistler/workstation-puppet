@@ -1,13 +1,13 @@
 class qutebrowser( $repo ) {
 
-  require base
+  require myuser
 
   package { 'tox':
     ensure => 'present'
   }
 
-  $userhome    = $base::userhome
-  $app_folder  = "$userhome/Apps"
+  $userhome    = $myuser::userhome
+  $app_folder  = $myuser::apps_folder
   $qute_folder = "$app_folder/qutebrowser"
 
   exec { 'clone_qutebrowser':

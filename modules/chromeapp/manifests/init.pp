@@ -1,9 +1,9 @@
 class chromeapp( $apps ) {
 
-    require base
+    require myuser
     require googlechrome
 
-    $userhome = $base::userhome
+    $userhome = $myuser::userhome
 
     file { ["$userhome/.local/","$userhome/.local/share/","$userhome/.local/share/applications/"]:
         ensure  => 'directory'

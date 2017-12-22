@@ -1,1 +1,1 @@
-lookup('classes', Array[String], 'unique').include
+lookup('roles', Array[String], 'unique').include

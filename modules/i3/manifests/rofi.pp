@@ -1,6 +1,6 @@
 class i3::rofi {
 
-  require 'apt'
+  require apt
 
   apt::ppa { 'ppa:aguignard/ppa': }
 
@@ -14,7 +14,7 @@ class i3::rofi {
   }
     
   package { 'rofi':
-       ensure => 'installed',
-       require => Exec['rofi_apt_get_update']
+    ensure => 'installed',
+    require => Exec['rofi_apt_get_update']
   }
 }

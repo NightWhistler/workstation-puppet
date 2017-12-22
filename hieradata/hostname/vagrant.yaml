@@ -1,1 +1,1 @@
-user: 'vagrant'
+myuser::username: 'vagrant'

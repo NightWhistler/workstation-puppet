@@ -1,11 +1,12 @@
-user: 'alex'
 
-classes:
-  - base
-  - i3
-  - devtools
+roles: role::workstation
+    
+role::workstation::profiles:
+  - profile::base
+  - profile::i3_desktop
+  - profile::devtools
 
-base::packages:
+profile::base::packages:
   - ubuntu-desktop
   - git
   - redshift-gtk
@@ -29,7 +30,8 @@ base::packages:
   - remmina
   - urlview
 
-base::classes:
+profile::base::classes:
+  - myuser
   - keepass2
   - skype
   - spotify
@@ -39,10 +41,7 @@ base::classes:
   - qutebrowser
   - unattended_upgrades
 
-qutebrowser::repo: "https://github.com/qutebrowser/qutebrowser.git"
-
-i3::packages:
-  - i3
+profile::i3_desktop::packages:
   - j4-dmenu-desktop
   - suckless-tools
   - python-setuptools
@@ -64,14 +63,13 @@ i3::packages:
   - xbacklight
   - arandr
 
-i3::classes:
-  - playerctl
+profile::i3_desktop::classes:
+  - i3
   - i3::rofi
   - i3::fix_systray
+  - playerctl
 
-playerctl::version: '0.5.0'
-
-devtools::packages:
+profile::devtools::packages:
   - build-essential
   - gitk
   - myrepos
@@ -88,12 +86,16 @@ devtools::packages:
   - groovy
   - xml-twig-tools
 
-devtools::classes:
+profile::devtools::classes:
   - sbt
   - docker
   - intellij
   - java8
+  - git_meld
 
+myuser::username: 'alex'
+qutebrowser::repo: "https://github.com/qutebrowser/qutebrowser.git"
+playerctl::version: '0.5.0'
 intellij::version: '2017.3'
 sbt::sbt_jar_version: 0.13.15
 
