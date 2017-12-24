@@ -9,7 +9,7 @@ sudo /opt/puppetlabs/bin/puppet module install maestrodev-wget
 sudo /opt/puppetlabs/bin/puppet module install spantree/java8
 sudo /opt/puppetlabs/bin/puppet module install puppet-archive
 sudo /opt/puppetlabs/bin/puppet module install talend-sbt
-sudo /opt/puppetlabs/bin/puppet module install puppet-unattended_upgrades --force
+sudo /opt/puppetlabs/bin/puppet module install puppet-unattended_upgrades 
 
 echo "Setting up workstation... go grab some coffee :)"
 ./update.sh
