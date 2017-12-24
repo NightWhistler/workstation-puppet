@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ENCODED=`curl -s -o /dev/null -w %{url_effective} --get --data-urlencode "$QUTE_URL" "" | cut -c 3-`
+echo ":open https://chart.googleapis.com/chart?cht=qr&chl=$ENCODED&chs=300x300&choe=UTF-8" >> $QUTE_FIFO
