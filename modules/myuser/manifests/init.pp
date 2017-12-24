@@ -36,4 +36,8 @@ class myuser( $username ) {
 
   ohmyzsh::install { $username: }
 
+  file { ["$userhome/.local/","$userhome/.local/share/","$userhome/.local/share/applications/"]:
+    ensure  => 'directory'
+  }
+
 }

@@ -5,10 +5,6 @@ class chromeapp( $apps ) {
 
     $userhome = $myuser::userhome
 
-    file { ["$userhome/.local/","$userhome/.local/share/","$userhome/.local/share/applications/"]:
-        ensure  => 'directory'
-    }
-
     $apps.each | $app | {
       chromeapp::app { $app['name']:
          displayName    => $app['displayName'],
