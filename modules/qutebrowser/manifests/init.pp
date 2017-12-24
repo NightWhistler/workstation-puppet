@@ -7,35 +7,38 @@ class qutebrowser( $repo ) {
   }
 
   $userhome    = $myuser::userhome
-  $app_folder  = $myuser::apps_folder
-  $bin_folder  = $myuser::bin_folder
+  $app_dir  = $myuser::app_dir
+  $bin_dir  = $myuser::bin_dir
 
-  $qute_folder = "$app_folder/qutebrowser"
+  $qute_dir = "$app_dir/qutebrowser"
 
   exec { 'clone_qutebrowser':
-    command => "/usr/bin/git clone $repo $qute_folder",
-    creates => $qute_folder,
-    cwd     => $app_folder,
+    command => "/usr/bin/git clone $repo $qute_dir",
+    creates => $qute_dir,
+    cwd     => $app_dir,
     require => Package['git']
   }
 
   exec { '/usr/bin/tox -e mkvenv-pypi':
-    creates  => "$qute_folder/.venv",
-    cwd      => $qute_folder,
+    creates  => "$qute_dir/.venv",
+    cwd      => $qute_dir,
     require  => Exec['clone_qutebrowser']
   } 
 
-  file { "$binfolder/qutebrowser":
-    source  => "puppet:///modules/qutebrowser/qutebrowser",
-    mode    => '0755'
+  file { "$bin_dir/qutebrowser":
+    ensure => file,
+    source => "puppet:///modules/qutebrowser/qutebrowser",
+    mode   => '0755'
   }
 
-  file { "$binfolder/quteqr":
+  file { "$bin_dir/quteqr":
+    ensure => file,
     source  => "puppet:///modules/qutebrowser/quteqr",
     mode    => '0755'
   }
 
   file { "$userhome/.local/share/applications/Qutebrowser.desktop":
+    ensure => file,
     source  => "puppet:///modules/qutebrowser/Qutebrowser.desktop"
   }
   

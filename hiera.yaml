@@ -10,3 +10,5 @@ hierarchy:
       - "product/%{facts.dmi.product.name}.yaml"
       - "manufacturer/%{facts.dmi.manufacturer}.yaml"
       - "defaults.yaml"
+
+

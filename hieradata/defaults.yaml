@@ -1,3 +1,8 @@
+lookup_options:
+  "^profile::(.*)::classes$": # Regexp: `$classes` parameter of any profile class
+    merge: unique         
+  "^profile::(.*)::packages$": 
+    merge: unique         
 
 roles: role::workstation
     
