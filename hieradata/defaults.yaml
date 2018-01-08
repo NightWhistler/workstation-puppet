@@ -45,6 +45,7 @@ profile::base::classes:
   - chromeapp
   - qutebrowser
   - unattended_upgrades
+  - signal
 
 profile::i3_desktop::packages:
   - j4-dmenu-desktop
