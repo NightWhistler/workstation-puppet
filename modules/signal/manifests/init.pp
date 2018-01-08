@@ -1,8 +1,8 @@
 class signal {
 
   apt::key { 'signal':
-    id         => '57F6FB06',
-    key_source => 'https://updates.signal.org/desktop/apt/keys.asc'
+    id         => 'DBA36B5181D0C816F630E889D980A17457F6FB06',
+    source => 'https://updates.signal.org/desktop/apt/keys.asc'
   }
 
   apt::source { 'signal':
