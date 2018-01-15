@@ -22,7 +22,6 @@ profile::base::packages:
   - ubuntu-restricted-extras
   - unity-tweak-tool
   - owncloud-client
-  - terminator
   - htop
   - screen
   - unsort
@@ -81,8 +80,6 @@ profile::devtools::packages:
   - myrepos
   - perl-doc
   - meld
-  - vim
-  - vim-gtk
   - vagrant
   - virtualbox
   - dnsmasq
@@ -98,6 +95,7 @@ profile::devtools::classes:
   - intellij
   - java8
   - git_meld
+  - neovim
 
 myuser::username: 'alex'
 qutebrowser::repo: "https://github.com/qutebrowser/qutebrowser.git"
