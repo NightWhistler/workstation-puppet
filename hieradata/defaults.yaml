@@ -67,6 +67,7 @@ profile::i3_desktop::packages:
   - tmux
   - xbacklight
   - arandr
+  - sxiv
 
 profile::i3_desktop::classes:
   - i3
