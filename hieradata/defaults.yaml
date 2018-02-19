@@ -68,6 +68,9 @@ profile::i3_desktop::packages:
   - xbacklight
   - arandr
   - sxiv
+  - mutt
+  - mutt-patched
+  - libsecret-tools
 
 profile::i3_desktop::classes:
   - i3
