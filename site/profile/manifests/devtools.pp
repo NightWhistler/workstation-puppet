@@ -8,8 +8,4 @@ class profile::devtools( $packages, $classes ) {
     ensure  => 'installed'
   }
 
-  class {'docker::compose': 
-    ensure => present,
-  }
-
 }
