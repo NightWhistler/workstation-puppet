@@ -78,6 +78,7 @@ profile::i3_desktop::classes:
     #  - i3::rofi
     #- i3::fix_systray
   - playerctl
+  - tmuxifier
 
 profile::devtools::packages:
   - build-essential
@@ -104,6 +105,8 @@ profile::devtools::classes:
 
 myuser::username: 'alex'
 qutebrowser::repo: "https://github.com/qutebrowser/qutebrowser.git"
+tmuxifier::repo: "https://github.com/jimeh/tmuxifier.git"
+
 playerctl::version: '0.5.0'
 intellij::version: '2017.3'
 sbt::sbt_jar_version: 0.13.15
