@@ -4,6 +4,7 @@ class skype {
   require wget
 
   $downloads_dir = $myuser::downloads_dir
+  $skype_prereq = ['gconf-service']
 
   wget::fetch { 'skype.deb':
       destination => "$downloads_dir/skype.deb",

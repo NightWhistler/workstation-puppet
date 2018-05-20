@@ -1,11 +1,11 @@
 lookup_options:
   "^profile::(.*)::classes$": # Regexp: `$classes` parameter of any profile class
-    merge: unique         
-  "^profile::(.*)::packages$": 
-    merge: unique         
+    merge: unique
+  "^profile::(.*)::packages$":
+    merge: unique
 
 roles: role::workstation
-    
+
 role::workstation::profiles:
   - profile::base
   - profile::i3_desktop
@@ -15,10 +15,9 @@ profile::base::packages:
   - ubuntu-desktop
   - git
   - redshift-gtk
-  - gksu
   - gnome-tweak-tool
   - network-manager-openvpn-gnome
-  - ppa-purge 
+  - ppa-purge
   - ubuntu-restricted-extras
   - unity-tweak-tool
   - owncloud-client
@@ -36,14 +35,14 @@ profile::base::packages:
 
 profile::base::classes:
   - myuser
+  - qutebrowser
+  - unattended_upgrades
   - keepass2
   - skype
   - spotify
   - steam
   - googlechrome
   - chromeapp
-  - qutebrowser
-  - unattended_upgrades
   - signal
 
 profile::i3_desktop::packages:
@@ -60,6 +59,8 @@ profile::i3_desktop::packages:
   - gettext
   - gir1.2-notify-0.7
   - gnome-settings-daemon
+  - libgconf-2-4
+  - gconf-service
   - feh
   - ranger
   - compton
@@ -68,14 +69,14 @@ profile::i3_desktop::packages:
   - xbacklight
   - arandr
   - sxiv
-  - mutt
-  - mutt-patched
   - libsecret-tools
+  - rofi
+  - neomutt
 
 profile::i3_desktop::classes:
   - i3
-  - i3::rofi
-  - i3::fix_systray
+    #  - i3::rofi
+    #- i3::fix_systray
   - playerctl
 
 profile::devtools::packages:
@@ -94,12 +95,12 @@ profile::devtools::packages:
   - xml-twig-tools
 
 profile::devtools::classes:
+  - neovim
   - sbt
-  - docker
-  - intellij
   - java8
   - git_meld
-  - neovim
+  #- intellij
+  #- docker
 
 myuser::username: 'alex'
 qutebrowser::repo: "https://github.com/qutebrowser/qutebrowser.git"
