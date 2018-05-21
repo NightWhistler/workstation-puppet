@@ -111,7 +111,7 @@ tmuxifier::repo: "https://github.com/jimeh/tmuxifier.git"
 
 playerctl::version: '0.5.0'
 intellij::version: '2018.1.3'
-sbt::sbt_jar_version: '1.1.2'
+sbt::sbt_jar_version: '0.13.6'
 
 chromeapp::apps:
   - name: "fbmessenger"
