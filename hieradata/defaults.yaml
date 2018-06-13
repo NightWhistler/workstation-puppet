@@ -102,7 +102,6 @@ profile::devtools::classes:
   - java8
   - git_meld
   - intellij
-  - docker
   #- docker
 
 myuser::username: 'alex'
