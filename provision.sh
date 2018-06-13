@@ -1,6 +1,7 @@
 #!/bin/sh
 
 echo "Adding Puppet modules"
+sudo /opt/puppetlabs/bin/puppet module install garethr/docker
 sudo /opt/puppetlabs/bin/puppet module install bashtoni-timezone
 sudo /opt/puppetlabs/bin/puppet module install zanloy-ohmyzsh
 sudo /opt/puppetlabs/bin/puppet module install puppetlabs-apt
