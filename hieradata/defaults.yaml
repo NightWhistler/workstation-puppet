@@ -89,7 +89,7 @@ profile::devtools::packages:
   - meld
   - vagrant
   - virtualbox
-  - dnsmasq
+    #  - dnsmasq
   - gradle
   - maven
   - scala
@@ -108,9 +108,9 @@ myuser::username: 'alex'
 qutebrowser::repo: "https://github.com/qutebrowser/qutebrowser.git"
 tmuxifier::repo: "https://github.com/jimeh/tmuxifier.git"
 
-playerctl::version: '0.5.0'
-intellij::version: '2018.1.3'
-sbt::sbt_jar_version: '0.13.6'
+playerctl::version: '0.6.1'
+intellij::version: '2018.2.3'
+sbt::sbt_jar_version: '1.2.3'
 
 chromeapp::apps:
   - name: "fbmessenger"
@@ -122,12 +122,12 @@ chromeapp::apps:
   - name: "whatsapp"
     displayName: "Whatsapp Web"
     url: "https://web.whatsapp.com"
-  - name: "hangouts"
-    displayName: "Google Hangouts"
-    url: "https://hangouts.google.come"
   - name: "outlook"
     displayName: "Outlook"
     url: "https://outlook.office365.com/owa/"
   - name: "gmail"
     displayName: "GMail"
     url: "https://mail.google.com/mail/u/0/#inbox"
+  - name: "twitter"
+    displayName: "Twitter"
+    url: "https://twitter.com"
