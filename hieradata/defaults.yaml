@@ -33,13 +33,17 @@ profile::base::packages:
   - remmina
   - urlview
 
+profile::base::snaps:
+  - spotify
+  - slack
+
 profile::base::classes:
   - myuser
   - qutebrowser
   - unattended_upgrades
   - keepass2
   - skype
-  - spotify
+    #  - spotify
   - steam
   - googlechrome
   - chromeapp
@@ -110,7 +114,7 @@ tmuxifier::repo: "https://github.com/jimeh/tmuxifier.git"
 
 playerctl::version: '0.6.1'
 intellij::version: '2018.2.3'
-sbt::sbt_jar_version: '1.2.3'
+sbt::sbt_jar_version: '0.13.6'
 
 chromeapp::apps:
   - name: "fbmessenger"
