@@ -20,6 +20,7 @@ profile::base::packages:
   - ppa-purge
   - ubuntu-restricted-extras
   - unity-tweak-tool
+  - gnome-themes-extra
   - owncloud-client
   - htop
   - screen
