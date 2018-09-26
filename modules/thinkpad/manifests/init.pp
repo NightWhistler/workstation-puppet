@@ -1,7 +1,7 @@
 class thinkpad {
 
   apt::ppa { 'ppa:linrunner/tlp': }
-  $packages = ['tlp', 'tp-smapi-dkms', 'acpi-call-dkms']
+  $packages = ['tlp', 'tp-smapi-dkms', 'acpi-call-dkms', 'xserver-xorg-input-synaptics']
 
   exec { 'tlp_apt_get_update':
     command     => 'apt-get update',
@@ -18,5 +18,9 @@ class thinkpad {
       ensure  => 'installed',
   }
 
+  file { '/usr/share/X11/xorg.conf.d/20-intel.conf':
+    ensure => present,
+    source => "puppet:///modules/thinkpad/20-intel.conf"
+  }
 
 }
