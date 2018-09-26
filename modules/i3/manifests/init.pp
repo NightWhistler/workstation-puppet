@@ -48,5 +48,21 @@ class i3 {
         mode    => '0755'
     }
   }
+
+  file { '/lib/systemd/system/i3lock@.service':
+    mode    => '0644',
+    owner   => 'root',
+    group   => 'root',
+    source =>  'puppet:///modules/i3/i3lock.service'
+  }~>
+  exec { 'i3lock-systemd-reload':
+    command     => 'systemctl daemon-reload',
+    path        => [ '/usr/bin', '/bin', '/usr/sbin' ]
+  }~> 
+  exec { 'i3lock-enable':
+    command     => "systemctl enable i3lock@${user}.service",
+    path        => [ '/usr/bin', '/bin', '/usr/sbin' ]
+  }
+
   
 }
