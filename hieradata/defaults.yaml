@@ -73,6 +73,7 @@ profile::i3_desktop::packages:
   - udiskie
   - tmux
   - xbacklight
+  - xautolock
   - arandr
   - sxiv
   - libsecret-tools
