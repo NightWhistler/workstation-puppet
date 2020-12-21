@@ -17,7 +17,7 @@ class neovim {
     
   package { 'neovim':
     ensure  => 'installed',
-    require => [Exec['neovim_apt_get_update'], Package[ 'python-pip', 'python-dev']]
+    require => [Exec['neovim_apt_get_update'], Package[ 'python-pip-whl', 'python-dev']]
   }
 
   #package{ ['websocket-client', 'sexpdata', 'neovim']:

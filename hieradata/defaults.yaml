@@ -19,7 +19,6 @@ profile::base::packages:
   - network-manager-openvpn-gnome
   - ppa-purge
   - ubuntu-restricted-extras
-  - unity-tweak-tool
   - gnome-themes-extra
   - owncloud-client
   - htop
@@ -33,6 +32,8 @@ profile::base::packages:
   - p7zip-full
   - remmina
   - urlview
+  - qutebrowser
+  # - unity-tweak-tool
 
 profile::base::snaps:
   - spotify
@@ -40,11 +41,9 @@ profile::base::snaps:
 
 profile::base::classes:
   - myuser
-  - qutebrowser
   - unattended_upgrades
   - keepass2
   - skype
-    #  - spotify
   - steam
   - googlechrome
   - chromeapp
@@ -55,7 +54,7 @@ profile::i3_desktop::packages:
   - j4-dmenu-desktop
   - suckless-tools
   - python-setuptools
-  - python-pip
+  - python-pip-whl
   - python-gobject
   - python-yaml
   - libgio2.0
@@ -101,11 +100,12 @@ profile::devtools::packages:
   - scala
   - groovy
   - xml-twig-tools
+  - openjdk-8-jdk
+  - openjdk-11-jdk
 
 profile::devtools::classes:
   - neovim
   - sbt
-  - java8
   - git_meld
   - intellij
   #- docker
@@ -115,7 +115,7 @@ qutebrowser::repo: "https://github.com/qutebrowser/qutebrowser.git"
 tmuxifier::repo: "https://github.com/jimeh/tmuxifier.git"
 
 playerctl::version: '0.6.1'
-intellij::version: '2018.2.3'
+intellij::version: '2020.3'
 sbt::sbt_jar_version: '0.13.6'
 
 chromeapp::apps:
