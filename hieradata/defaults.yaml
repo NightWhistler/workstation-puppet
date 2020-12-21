@@ -33,7 +33,7 @@ profile::base::packages:
   - remmina
   - urlview
   - qutebrowser
-  # - unity-tweak-tool
+  - unity-tweak-tool
 
 profile::base::snaps:
   - spotify
