@@ -42,7 +42,7 @@ profile::base::snaps:
 profile::base::classes:
   - myuser
   - unattended_upgrades
-  - keepass2
+  - keepassxc
   - skype
   - steam
   - googlechrome
