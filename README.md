@@ -15,7 +15,7 @@ How I set up a new machine
 
  3. Download and unzip this project
 
- 4. Run puppet.sh to install Puppet 4 on the machine
+ 4. Run puppet7.sh to install Puppet 7 on the machine (or matching scripts for older versions)
 
  5. Run provision.sh to actually install all the tools and packages I need.
     This is a seperate step from 2, since this can also be run to update a machine.
@@ -28,10 +28,6 @@ How I set up a new machine
 
 
 I am putting this on Github since there is nothing specific to me in this setup, though changes are you'd want to tweak it for your own use... 
-Vimperator and i3 are not everyone's cup of tea :)
+Qutebrowser and i3 are not everyone's cup of tea :)
 
-
-Known issues
-------------
-
-There seem to be some minor ordening problems in adding new apt repos, so often you'll need to run provision.sh twice to get the system fully set up. Slightly annoying but not a show-stopper.
+I have tried to make it neatly modular and configurable, so it should be easy to make your own configuration.
