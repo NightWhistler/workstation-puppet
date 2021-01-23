@@ -41,7 +41,7 @@ class i3 {
     ensure  => 'purged'
   }
 
-  ['move', 'left_handed_mouse.sh'].each | $script | {
+  ['move', 'left_handed_mouse.sh', 'hidpi.sh', 'lowdpi.sh', 'detect_desk_setup.sh'].each | $script | {
     file { "${userhome}/bin/${script}" :
         ensure  => 'present',
         source  => "puppet:///modules/i3/${script}",
