@@ -1,7 +1,5 @@
-class role::workstation {
+class role::workstation( $profiles ) {
 
-  include profile::base
-  include profile::i3_desktop
-  include profile::devtools
+  include $profiles
 
 }

@@ -10,6 +10,7 @@ role::workstation::profiles:
   - profile::base
   - profile::i3_desktop
   - profile::devtools
+  - profile::webdev
 
 profile::base::packages:
   - ubuntu-desktop
@@ -109,6 +110,10 @@ profile::devtools::classes:
   - git_meld
   - intellij
   #- docker
+
+profile::webdev::packages:
+  - typescript
+  - typescript-language-server
 
 myuser::username: 'alex'
 qutebrowser::repo: "https://github.com/qutebrowser/qutebrowser.git"

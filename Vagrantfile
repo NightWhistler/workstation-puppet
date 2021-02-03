@@ -12,12 +12,12 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "ubuntu/xenial64"
+  config.vm.box = "bento/ubuntu-20.04"
 
   config.vm.provision "shell", inline: <<-SHELL
       echo "APT::Periodic::Unattended-Upgrade \"0\";" >> /etc/apt/apt.conf.d/10periodic 
       cd /vagrant
-      ./puppet4.sh
+      ./puppet7.sh
       ./provision.sh
    SHELL
 

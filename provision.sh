@@ -15,6 +15,7 @@ sudo /opt/puppetlabs/bin/puppet module install zanloy-ohmyzsh
 sudo /opt/puppetlabs/bin/puppet module install spantree/java8
 sudo /opt/puppetlabs/bin/puppet module install puppet-archive
 sudo /opt/puppetlabs/bin/puppet module install kemra102-snapd
+sudo /opt/puppetlabs/bin/puppet module install puppet/nodejs
 
 echo "Setting up workstation... go grab some coffee :)"
 ./update.sh
