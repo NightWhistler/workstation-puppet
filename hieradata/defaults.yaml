@@ -8,19 +8,20 @@ roles: role::workstation
 
 role::workstation::profiles:
   - profile::base
-  - profile::i3_desktop
   - profile::devtools
   - profile::webdev
+  # - profile::i3_desktop
+  - profile::regolith_desktop
 
 profile::base::packages:
   - ubuntu-desktop
   - git
   - redshift-gtk
-  - gnome-tweak-tool
-  - network-manager-openvpn-gnome
-  - ppa-purge
-  - ubuntu-restricted-extras
-  - gnome-themes-extra
+  # - gnome-tweak-tool
+  # - network-manager-openvpn-gnome
+  # - ppa-purge
+  # - ubuntu-restricted-extras
+  # - gnome-themes-extra
   - owncloud-client
   - htop
   - screen
@@ -31,10 +32,13 @@ profile::base::packages:
   - inkscape
   - vlc
   - p7zip-full
-  - remmina
+  # - remmina
   - urlview
   - qutebrowser
-  - unity-tweak-tool
+  # - unity-tweak-tool
+  - ranger
+  - tmux
+  - python-pip-whl
 
 profile::base::snaps:
   - spotify
@@ -50,12 +54,12 @@ profile::base::classes:
   - chromeapp
   - signal
   - obs_studio
+  - tmuxifier
 
 profile::i3_desktop::packages:
   - j4-dmenu-desktop
   - suckless-tools
   - python-setuptools
-  - python-pip-whl
   - python-gobject
   - python-yaml
   - libgio2.0
@@ -68,10 +72,8 @@ profile::i3_desktop::packages:
   - libgconf-2-4
   - gconf-service
   - feh
-  - ranger
   - compton
   - udiskie
-  - tmux
   - xbacklight
   - xautolock
   - arandr
@@ -84,8 +86,10 @@ profile::i3_desktop::classes:
   - i3
     #  - i3::rofi
     #- i3::fix_systray
-  - playerctl
-  - tmuxifier
+  # - playerctl
+
+profile::regolith_desktop::classes:
+  - regolith
 
 profile::devtools::packages:
   - build-essential
@@ -98,15 +102,16 @@ profile::devtools::packages:
     #  - dnsmasq
   - gradle
   - maven
-  - scala
+  # - scala
   - groovy
   - xml-twig-tools
   - openjdk-8-jdk
   - openjdk-11-jdk
+  - docker.io
 
 profile::devtools::classes:
   - neovim
-  - sbt
+  # - sbt
   - git_meld
   - intellij
   #- docker
@@ -120,7 +125,7 @@ qutebrowser::repo: "https://github.com/qutebrowser/qutebrowser.git"
 tmuxifier::repo: "https://github.com/jimeh/tmuxifier.git"
 
 playerctl::version: '0.6.1'
-intellij::version: '2020.3'
+intellij::version: '2021.2'
 sbt::sbt_jar_version: '0.13.6'
 
 chromeapp::apps:

@@ -1,2 +1,5 @@
-profile::base::classes:
-  - thinkpad
+#profile::base::classes:
+#  - thinkpad
+
+profile::base::packages:
+  - nvidia-prime
