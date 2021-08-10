@@ -2,7 +2,7 @@
 class thinkpad {
 
   apt::ppa { 'ppa:linrunner/tlp': }
-  $packages = ['tlp', 'tp-smapi-dkms', 'acpi-call-dkms', 'xserver-xorg-input-synaptics']
+  $packages = ['tlp', 'tp-smapi-dkms', 'acpi-call-dkms']
 
   exec { 'tlp_apt_get_update':
     command     => 'apt-get update',
@@ -13,22 +13,9 @@ class thinkpad {
     refreshonly => true,
   }
 
-
   package { $packages: 
       require => Exec['tlp_apt_get_update'],
       ensure  => 'installed',
-  }
-
-  #Makes sure the backlight controls work
-  file { '/usr/share/X11/xorg.conf.d/20-intel.conf':
-    ensure => present,
-    source => 'puppet:///modules/thinkpad/20-intel.conf'
-  }
-
-  #This enables sleeping when the lid closes
-  file { '/etc/systemd/logind.conf':
-    ensure => present,
-    source => 'puppet:///modules/thinkpad/logind.conf'
   }
 
 }
