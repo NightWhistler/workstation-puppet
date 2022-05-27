@@ -2,7 +2,7 @@ class neovim {
 
   apt::ppa { 'ppa:neovim-ppa/stable': }
 
-  package { [ 'python-dev', 'python3-dev', 'python3-pip' ]:
+  package { [ 'python-dev', 'python3-dev', 'python3-pip', 'silversearcher-ag' ]:
     ensure => 'installed'
   }
 
