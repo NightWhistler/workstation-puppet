@@ -38,7 +38,7 @@ profile::base::packages:
   # - unity-tweak-tool
   - ranger
   - tmux
-  - python-pip-whl
+  - python3-pip-whl
 
 profile::base::snaps:
   - spotify
@@ -49,7 +49,7 @@ profile::base::classes:
   - unattended_upgrades
   - keepassxc
   - skype
-  - steam
+  # - steam
   - googlechrome
   - chromeapp
   - signal
@@ -117,7 +117,11 @@ profile::devtools::classes:
   #- docker
 
 profile::webdev::packages:
-  - typescript
+  - nodejs
+  - npm
+  - node-typescript
+
+profile::webdev::snaps:
   - typescript-language-server
 
 myuser::username: 'alex'

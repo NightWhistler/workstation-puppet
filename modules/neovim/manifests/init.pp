@@ -2,7 +2,7 @@ class neovim {
 
   apt::ppa { 'ppa:neovim-ppa/stable': }
 
-  package { [ 'python-dev', 'python3-dev', 'python3-pip', 'silversearcher-ag' ]:
+  package { [ 'python3-dev', 'python3-pip', 'silversearcher-ag' ]:
     ensure => 'installed'
   }
 
@@ -17,13 +17,8 @@ class neovim {
     
   package { 'neovim':
     ensure  => 'installed',
-    require => [Exec['neovim_apt_get_update'], Package[ 'python-pip-whl', 'python-dev']]
+    require => [Exec['neovim_apt_get_update'], Package[ 'python3-pip-whl']]
   }
 
-  #package{ ['websocket-client', 'sexpdata', 'neovim']:
-    #  ensure   => present,
-    #provider => 'pip',
-    #require  => [ Package['python-pip'], ],
-    #}
 
 }
