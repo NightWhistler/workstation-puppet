@@ -91,6 +91,10 @@ profile::i3_desktop::classes:
 profile::regolith_desktop::classes:
   - regolith
 
+profile::regolith_desktop::packages:
+  - i3xrocks-battery
+  - i3xrocks-volume
+
 profile::devtools::packages:
   - build-essential
   - gitk
