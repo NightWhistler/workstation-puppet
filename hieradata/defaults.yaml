@@ -10,7 +10,6 @@ role::workstation::profiles:
   - profile::base
   - profile::devtools
   - profile::webdev
-  # - profile::i3_desktop
   - profile::regolith_desktop
 
 profile::base::packages:
@@ -42,13 +41,13 @@ profile::base::packages:
 
 profile::base::snaps:
   - spotify
-  - slack
+  # - slack
 
 profile::base::classes:
   - myuser
   - unattended_upgrades
   - keepassxc
-  - skype
+  # - skype
   # - steam
   - googlechrome
   - chromeapp
@@ -109,8 +108,8 @@ profile::devtools::packages:
   # - scala
   - groovy
   - xml-twig-tools
-  - openjdk-8-jdk
   - openjdk-11-jdk
+  - openjdk-17-jdk
   - docker.io
 
 profile::devtools::classes:
@@ -133,7 +132,7 @@ qutebrowser::repo: "https://github.com/qutebrowser/qutebrowser.git"
 tmuxifier::repo: "https://github.com/jimeh/tmuxifier.git"
 
 playerctl::version: '0.6.1'
-intellij::version: '2021.2'
+intellij::version: '2022.1.4'
 sbt::sbt_jar_version: '0.13.6'
 
 chromeapp::apps:
