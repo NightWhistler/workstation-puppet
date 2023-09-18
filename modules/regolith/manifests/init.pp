@@ -12,7 +12,7 @@ class regolith {
      require  => Apt::Key['regolith_key']
    }
 
-  package { 'regolith-desktop', 'regolith-session-flashback', 'regolith-look-lascaille':
+  package { ['regolith-desktop', 'regolith-session-flashback', 'regolith-look-lascaille']:
      ensure    => 'installed',
      require   => Apt::Source['regolith']
   }
