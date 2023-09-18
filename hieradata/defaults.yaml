@@ -21,7 +21,7 @@ profile::base::packages:
   # - ppa-purge
   # - ubuntu-restricted-extras
   # - gnome-themes-extra
-  - owncloud-client
+  # - owncloud-client
   - htop
   - screen
   - unsort
@@ -54,6 +54,7 @@ profile::base::classes:
   - signal
   - obs_studio
   - tmuxifier
+  - owncloud
 
 profile::i3_desktop::packages:
   - j4-dmenu-desktop
