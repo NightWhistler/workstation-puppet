@@ -7,7 +7,7 @@ class regolith {
   }
 
   apt::source { 'regolith':
-     location => 'https://regolith-desktop.org/release-3_0-ubuntu-jammy-amd64 jammy main',
+     location => 'https://regolith-desktop.org/release-3_0-ubuntu-jammy-amd64',
      repos    => 'main',
      require  => Apt::Key['regolith_key']
    }
